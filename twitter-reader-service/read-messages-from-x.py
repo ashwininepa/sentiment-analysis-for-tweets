@@ -18,6 +18,9 @@ client = tweepy.Client(bearer_token=BEARER_TOKEN)
 
 def search_tweets(query, max_results=100):
     try:
+        # response = {"Review": "This are mysteriously bad. Unknown everywhere"}
+        # requests.post(api_url, json=response["Review"])
+        
         # Search for tweets matching the query
         response = client.search_recent_tweets(
             query=query,
