@@ -2,7 +2,6 @@ import tweepy
 import os
 import requests
 
-import pandas as pd
 
 # Set up Twitter API credentials
 API_KEY = os.getenv('TWITTER_API_KEY')
