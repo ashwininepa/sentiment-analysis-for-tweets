@@ -1,0 +1,8 @@
+nltk==3.9.1
+contractions==0.1.73
+tensorflow==2.19.0
+emoji==2.14.1
+seaborn==0.3.2
+tensorflow_hub==0.16.1
+Flask==3.1.0
+scikit-learn==1.6.1
