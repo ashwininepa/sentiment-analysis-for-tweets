@@ -42,5 +42,5 @@ def search_tweets(query, max_results=100):
         print(f"Error: {e}")
         print("Rate limit exceeded. Wait for reset.")
 
-tweets_data = search_tweets('US Elections')
-print(tweets_data)
+# tweets_data = search_tweets('US Elections')
+# print(tweets_data)
