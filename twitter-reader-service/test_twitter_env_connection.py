@@ -23,21 +23,17 @@ def search_tweets(query, max_results=100):
         )
              
         if response.data:
-            tweets = []
             for tweet in response.data:
-                tweets.append({
-                    "Review": tweet.text,
-                    "lang": tweet.lang
-                })
-                
-            tweets_df = pd.DataFrame(tweets)
-            # Keep only english text
-            tweets_df = tweets_df[tweets_df['lang'] == 'en']
-            
-            return tweets_df
+                if tweet.lang == 'en':  # Check if the tweet is in English
+                    tweet = {
+                        "Review": tweet.text,
+                        "lang": tweet.lang
+                    }
+                    # Send the tweet to the REST API for prediction
+                    response = requests.post(api_url, json=tweet["Review"])
+                    print("Response from API:", response.json())
         else:
-            print("No tweets found.")
-            return pd.DataFrame()
+            return "No tweets found."
 
     except tweepy.TooManyRequests as e:
         print(f"Error: {e}")
