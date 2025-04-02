@@ -1,0 +1,14 @@
+services:
+  api_service:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+
+  twitter_reader:
+    build:
+      context: ./twitter-reader-service
+      dockerfile: Dockerfile
+    depends_on:
+      - api_service
