@@ -28,18 +28,18 @@ I have used postman to test api and by sending some text via postman.
 1. Paste example to test e.g. 
 - {"Review": "This are mysteriously bad. Unknown everywhere"} or 
 - {"Review: "He’s not hated , but also not really likable.  Just a boring face of the NFL.}
-1. Next thing is good to have gcloud credentials or whichever cloud platform you choose.
+6. Next thing is good to have gcloud credentials or whichever cloud platform you choose.
 
 ## Deploy to gcloud run
 1. Authenticate docker with gcp
 gcloud auth configure-docker
 1. Tag local docker image
-docker tag sentiment-analysis-for-tweets-api_service:latest gcr.io/sentiment-analysis-455515/sentiment-analysis-for-tweets-api_service:latest
-docker tag sentiment-analysis-for-tweets-twitter_reader:latest gcr.io/sentiment-analysis-for-tweets-twitter_reader:latest/sentiment-analysis-455515/sentiment-analysis-for-tweets-twitter_reader:latest
+`docker tag sentiment-analysis-for-tweets-api_service:latest gcr.io/sentiment-analysis-455515/sentiment-analysis-for-tweets-api_service:latest`
+`docker tag sentiment-analysis-for-tweets-twitter_reader:latest gcr.io/sentiment-analysis-for-tweets-twitter_reader:latest/sentiment-analysis-455515/sentiment-analysis-for-tweets-twitter_reader:latest`
 1. Push the image to GCR
-docker push gcr.io/sentiment-analysis-455515/sentiment-analysis-for-tweets-api_service:latest
-docker push gcr.io/sentiment-analysis-455515/sentiment-analysis-455515/sentiment-analysis-for-tweets-twitter_reader:latest
+`docker push gcr.io/sentiment-analysis-455515/sentiment-analysis-for-tweets-api_service:latest`
+`docker push gcr.io/sentiment-analysis-455515/sentiment-analysis-455515/sentiment-analysis-for-tweets-twitter_reader:latest`
 1. Verify the images in GCP(console.cloud.com > Container Registry > Artifact Registry)
 1. Deploy the images to GCP
-gcloud run deploy api-service --image gcr.io/sentiment-analysis-455515/sentiment-analysis-for-tweets-api_service:latest --memory 8G
-gcloud run deploy api-service --image gcr.io/sentiment-analysis-455515/sentiment-analysis-455515/sentiment-analysis-for-tweets-twitter_reader:latest --memory 8G
+`gcloud run deploy api-service --image gcr.io/sentiment-analysis-455515/sentiment-analysis-for-tweets-api_service:latest --memory 8G`
+`gcloud run deploy api-service --image gcr.io/sentiment-analysis-455515/sentiment-analysis-455515/sentiment-analysis-for-tweets-twitter_reader:latest --memory 8G`
