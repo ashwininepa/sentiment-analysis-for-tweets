@@ -26,7 +26,7 @@ I have used postman to test api and by sending some text via postman.
 1. Use Postman to test the model and links
 1. Select 'raw' (and on right make sure JSON is selected as that is what is allowed on this api).
 1. Paste example to test e.g. 
-- {"Review": "This are mysteriously bad. Unknown everywhere"} or 
+- {"Review": "These are mysteriously bad. Unknown everywhere"} or 
 - {"Review: "He’s not hated , but also not really likable.  Just a boring face of the NFL.}
 6. Next thing is good to have gcloud credentials or whichever cloud platform you choose.
 
