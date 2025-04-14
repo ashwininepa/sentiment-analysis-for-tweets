@@ -48,4 +48,4 @@ def predict():
     return jsonify({'prediction': int(prediction[0])})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000) # Runs the Flask app on host 0.0.0.0 and port 5000, host ensures that the app is accessible from other containers or machines in the network
+    app.run(host='127.0.0.1', port=5000) # Runs the Flask app on host 127.0.0.1 and port 5000, host ensures that the app is accessible from other containers or machines in the network
